@@ -302,7 +302,7 @@
             }
 
             /* Ensure minimum lateral padding on all sections */
-            section > .mx-auto {
+            section>.mx-auto {
                 padding-left: 1.25rem;
                 padding-right: 1.25rem;
             }
@@ -321,6 +321,7 @@
 
         /* Desktop: standardise vertical section rhythm */
         @media (min-width: 768px) {
+
             section[id="trabalhos"],
             section[id="sobre"],
             section[id="contato"] {
@@ -353,7 +354,7 @@
             class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-5 lg:px-10 transition-all duration-300">
             <a href="#home" class="flex items-center gap-3 group" aria-label="Lucas Gabriel — Início">
                 <img id="nav-logo" src="src/assets/images/logonav.png" alt="Lucas Gabriel"
-                    class="h-12 sm:h-16 w-auto transition-all duration-300 group-hover:scale-105" />
+                    class="h-10 sm:h-16 w-auto max-w-[140px] object-contain transition-all duration-300 group-hover:scale-105" />
             </a>
 
             <ul class="hidden items-center gap-10 md:flex">
@@ -523,7 +524,7 @@
                         Projetos Online
                     </h2>
                     <p class="mt-6 max-w-2xl text-base leading-relaxed text-navy-bg/80 sm:text-lg">
-                        Aqui estão alguns dos projetos selecionados que demonstram<br />
+                        Aqui estão alguns dos projetos selecionados que demonstram
                         minha paixão por desenvolvimento front-end.
                     </p>
                 </div>
@@ -591,7 +592,8 @@
                 <article class="project-card mt-24 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 reveal">
                     <!-- Image column -->
                     <div class="order-2 lg:order-1 self-stretch">
-                        <a href="https://site-drafab-q91d.vercel.app?_vercel_share=3oI5afnyJv26EWg9axrV36xJHTuaM7Mz" target="_blank" rel="noopener noreferrer"
+                        <a href="https://site-drafab-q91d.vercel.app?_vercel_share=3oI5afnyJv26EWg9axrV36xJHTuaM7Mz"
+                            target="_blank" rel="noopener noreferrer"
                             class="project-img-link img-wrap project-img-frame h-full min-h-[280px] overflow-hidden"
                             aria-label="Abrir landing page da Dra. Fabiana Gomes">
                             <img src="src/assets/images/fabiana.png"
@@ -633,7 +635,8 @@
                             </div>
                         </dl>
 
-                        <a href="https://site-drafab-q91d.vercel.app?_vercel_share=3oI5afnyJv26EWg9axrV36xJHTuaM7Mz" target="_blank" rel="noopener noreferrer"
+                        <a href="https://site-drafab-q91d.vercel.app?_vercel_share=3oI5afnyJv26EWg9axrV36xJHTuaM7Mz"
+                            target="_blank" rel="noopener noreferrer"
                             class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep transition hover:text-amber-600">
                             <svg class="icon text-navy-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -650,7 +653,8 @@
                 <article class="project-card mt-24 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 reveal">
                     <!-- Image column -->
                     <div class="order-2 lg:order-1 self-stretch">
-                        <a href="#" class="project-img-link img-wrap project-img-frame h-full min-h-[280px] overflow-hidden"
+                        <a href="#"
+                            class="project-img-link img-wrap project-img-frame h-full min-h-[280px] overflow-hidden"
                             aria-label="Abrir landing page da Dra. Camila">
                             <img src="src/assets/images/camila.png" alt="Screenshot da landing page da Dra. Camila"
                                 class="h-full w-full object-cover" loading="lazy" />
@@ -688,17 +692,6 @@
                                 <dd class="text-sm font-semibold text-navy-deep">2026</dd>
                             </div>
                         </dl>
-
-                        <a href="#"
-                            class="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy-deep transition hover:text-amber-600">
-                            <svg class="icon text-navy-deep" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                <polyline points="15 3 21 3 21 9" />
-                                <line x1="10" y1="14" x2="21" y2="3" />
-                            </svg>
-                            Demonstração ao vivo
-                        </a>
                     </div>
                 </article>
 
@@ -896,8 +889,6 @@
         const navLogo = document.getElementById('nav-logo');
 
         const onScroll = () => {
-            const isMobile = window.innerWidth < 768;
-
             if (window.scrollY > 40) {
                 header.classList.add('bg-navy-bg/90', 'backdrop-blur-md', 'border-white/10');
                 header.classList.remove('border-transparent');
@@ -906,15 +897,8 @@
                     nav.classList.remove('py-3', 'sm:py-5');
                 }
                 if (navLogo) {
-                    if (isMobile) {
-                        navLogo.src = 'src/assets/images/logo arara.png';
-                        navLogo.classList.add('h-8');
-                        navLogo.classList.remove('h-12', 'sm:h-16', 'sm:h-12');
-                    } else {
-                        navLogo.src = 'src/assets/images/logonav.png';
-                        navLogo.classList.add('sm:h-12');
-                        navLogo.classList.remove('h-8', 'h-12', 'sm:h-16');
-                    }
+                    navLogo.classList.add('h-8');
+                    navLogo.classList.remove('h-10', 'h-12', 'sm:h-16');
                 }
             } else {
                 header.classList.remove('bg-navy-bg/90', 'backdrop-blur-md', 'border-white/10');
@@ -925,8 +909,8 @@
                 }
                 if (navLogo) {
                     navLogo.src = 'src/assets/images/logonav.png';
-                    navLogo.classList.add('h-12', 'sm:h-16');
-                    navLogo.classList.remove('h-8', 'sm:h-12');
+                    navLogo.classList.add('h-10', 'sm:h-16');
+                    navLogo.classList.remove('h-8', 'h-12', 'sm:h-12');
                 }
             }
         };
