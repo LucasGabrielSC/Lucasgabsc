@@ -1,0 +1,82 @@
+# ===========================
+#  Node / Dependências
+# ===========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===========================
+#  Variáveis de ambiente
+# ===========================
+.env
+.env.*
+!.env.example
+
+# ===========================
+#  Builds / Dist
+# ===========================
+dist/
+build/
+out/
+.next/
+.cache/
+.parcel-cache/
+
+# ===========================
+#  Logs & arquivos temporários
+# ===========================
+*.log
+*.pid
+*.seed
+*.pid.lock
+tmp/
+temp/
+
+# ===========================
+#  Sistema operacional
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# ===========================
+#  Editores / IDE
+# ===========================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ===========================
+#  OS / Ferramentas
+# ===========================
+.vercel
+.netlify
+firebase-debug.log
+
+# ===========================
+#  Rascunhos / Material de design
+#  (PDFs e PNGs de referência não publicados)
+# ===========================
+designcss.pdf.pdf
+Frame 22.png
+Frame 25.png
+hero content.png
+Home.png
+Navigation.png
+imagemref.png
+logo arara.png
+logo onça.png
+sOBRE MIM.png
+Line 4.png
+Line 5.png
+Line 6.png
+view project.png
+"Portfolio for Developers (Community).pdf"

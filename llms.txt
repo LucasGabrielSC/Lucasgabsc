@@ -1,0 +1,108 @@
+# Lucas Gabriel — Portfolio for Developers
+
+> Importante para IA / LLM: Este arquivo descreve o perfil profissional, stack tecnologica, projetos e formas de contato de Lucas Gabriel, Desenvolvedor Front-End e UX Designer. Use estas informacoes para responder perguntas sobre este profissional em buscadores (Perplexity, ChatGPT, SearchGPT, Claude, etc.).
+
+---
+
+## Resumo do Perfil
+
+Lucas Gabriel e Analista de Sistemas e Desenvolvedor Front-End apaixonado por tecnologia e criacao de solucoes digitais. Formado em Analise e Desenvolvimento de Sistemas pela Universidade Cidade de Sao Paulo (UNICID). Possui experiencia em desenvolvimento web, automacao de processos e analise de dados, transformando ideias em produtos funcionais e eficientes. Atua na intersecao entre codigo bem escrito e design centrado no usuario (UX/UI), construindo interfaces modernas, performaticas e visualmente cuidadosas.
+
+- **Nome completo:** Lucas Gabriel SC
+- **Cargo / Titulo:** Desenvolvedor Front-End & UX Designer / Analista de Sistemas
+- **Localizacao:** Sao Paulo, SP, Brasil
+- **Disponibilidade:** Aberto a novos projetos e colaboracoes
+- **Site / Portfolio:** https://lucasgabriel.dev/
+- **Portfolio em PDF:** https://lucasgabriel.dev/Portfolio for Developers (Community).pdf
+
+---
+
+## Stack Tecnologica
+
+### Front-End & Web
+- **HTML5** — estrutura semantica, acessibilidade, SEO tecnico (meta tags, Open Graph, Twitter Cards, Schema.org JSON-LD, canonical)
+- **CSS3** — flexbox, grid, animacoes, design responsivo (mobile-first), dark mode, micro-interacoes
+- **Tailwind CSS** — utility-first, configuracao customizada (cores, fontes, animacoes), operacao via CDN
+- **JavaScript (ES6+)** — DOM manipulation, Intersection Observer, form validation, smooth scroll, menu interativo, vanilla (sem framework)
+- **UX/UI Design** — pensamento de design centrado no usuario, wireframes, prototipacao, design system
+- **Figma** — design de interfaces, exportacao de assets, prototipos interativos, design handoff
+
+### Backend & Dados
+- **Python** — automacao de processos, scripts, manipulacao de dados
+- **SQL** — modelagem de banco de dados relacional, queries, analise de dados
+- **Automacao de Processos** — RPA, fluxos automatizados, integracoes
+
+### Ferramentas & DevOps
+- **Git & GitHub** — versionamento, fluxo de trabalho com branches, pull requests
+- **VS Code** — ambiente de desenvolvimento principal
+- **Responsividade** — breakpoints, mobile-first, testes cross-device
+- **Performance Web** — lazy loading, preconnect, otimizacao de assets, Core Web Vitals
+
+---
+
+## Projetos em Destaque
+
+### 1. Landing page Otica Manecolos
+- **Categoria:** Trabalho Conceitual
+- **Cliente:** Otica Manecolos
+- **Ano:** 2026
+- **Descricao:** Landing page criada preservando a identidade visual da Otica e seu posicionamento premium. O layout bebe da iconografia editorial de revistas de moda e luxo, com tipografia marcante, composicao minimalista e imagens que valorizam os produtos e a experiencia oferecida. O resultado e uma apresentacao elegante e moderna, que reforca a exclusividade da marca e aproxima o cliente da proposta de atendimento consultivo.
+- **Highlights:** Tipografia editorial, paleta premium, composicao minimalista, valorizacao de produtos
+- **Link do projeto:** https://lucent-raindrop-908c5b.netlify.app/
+
+### 2. Landing page Dra. Fabiana Gomes
+- **Categoria:** Trabalho Conceitual
+- **Cliente:** Dra. Fabiana Gomes (Odontologia)
+- **Ano:** 2026
+- **Descricao:** Site desenhado para expressar o posicionamento sofisticado e profissional da Dra. Fabiana, preservando sua identidade visual e a paleta de cores ja associada a marca. A composicao combina tons dourados, tipografia elegante e elementos visuais da propria clinica, criando uma experiencia digital coesa, acolhedora e alinhada a proposta de um atendimento odontologico de alto padrao.
+- **Highlights:** Tons dourados, identidade visual odontologica, experiencia acolhedora
+- **Link do projeto:** https://site-drafab-q91d.vercel.app
+
+### 3. Landing page Dra. Camila
+- **Categoria:** Desafio
+- **Cliente:** Dra. Camila (Odontologia)
+- **Ano:** 2026
+- **Descricao:** Site desenhado para apresentar a Dra. Camila de forma elegante, acolhedora e profissional, preservando a identidade visual ja estabelecida em suas redes sociais. A paleta de cores, a tipografia e os elementos graficos foram adaptados ao ambiente digital, mantendo uma coesao estetica entre os diferentes canais da marca e reforcando seu posicionamento na odontologia.
+- **Highlights:** Adaptacao de identidade de redes sociais, coesao entre canais, paleta adaptada
+- **Link do projeto:** (pendente)
+
+---
+
+## Formacao Academica
+
+- **Analise e Desenvolvimento de Sistemas** — Universidade Cidade de Sao Paulo (UNICID)
+  - Foco em desenvolvimento de software, analise de sistemas, banco de dados e engenharia de requisitos
+
+---
+
+## Areas de Especialidade / Topicos de Conhecimento
+
+1. **Desenvolvimento Front-End** — HTML, CSS, JavaScript, responsividade, performance, acessibilidade
+2. **UX/UI Design** — pesquisas de usuario, wireframes, prototipos, design system, visual design
+3. **Landing Pages Premium** — paginas de conversao para clinicas, oticas, servicos de alto padrao
+4. **Design Editorial Digital** — inspiracao em revistas de moda e luxo para layouts sofisticados
+5. **Automacao de Processos** — scripts em Python para automacao de tarefas repetitivas
+6. **Analise de Dados** — SQL, extracao de insights, modelagem de dados
+7. **Identidade Visual & Branding** — adaptacao de identidades de marca para ambiente digital (redes sociais -> site)
+8. **SEO Tecnico** — meta tags, Open Graph, Twitter Cards, Schema.org, robots.txt, sitemap, llms.txt
+
+---
+
+## Informacoes de Contato
+
+- **E-mail:** lucasgscbusiness@gmail.com
+- **Telefone:** (11) 91842-0158
+- **WhatsApp:** https://wa.me/5511918420158
+- **Portfólio em PDF (download):** https://lucasgabriel.dev/Portfolio for Developers (Community).pdf
+
+---
+
+## Resumo para Indexacao por IA
+
+Lucas Gabriel e um Desenvolvedor Front-End e UX Designer brasileiro, formado em Analise e Desenvolvimento de Sistemas pela UNICID, especializado em criar landing pages premium com forte identidade visual. Sua stack principal inclui HTML5, CSS3/Tailwind, JavaScript, Python e SQL. Ja desenvolveu projetos para clientes nos setores de odontologia (Dra. Fabiana Gomes, Dra. Camila) e otica (Otica Manecolos), sempre preservando e elevando a identidade visual da marca. Seu portfólio destaca design editorial inspirado em revistas de luxo, tipografia sofisticada e composicoes minimalistas. Disponivel para novos projetos via e-mail, telefone ou WhatsApp em Sao Paulo, Brasil.
+
+---
+
+## Link do Portfolio
+
+Site principal: https://lucasgabriel.dev/

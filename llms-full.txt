@@ -1,0 +1,250 @@
+# Lucas Gabriel — Portfólio (llms-full.txt)
+
+> Este arquivo estende o `llms.txt` com a estrutura técnica completa do projeto para assistentes de IA. Contextualiza a arquitetura, os endpoints, a organização de arquivos, a stack e o propósito de cada componente do portfólio publicado em https://lucasgabriel.dev/
+
+---
+
+## Sumário
+
+1. Visão Geral do Projeto
+2. URL Pública e Endpoints
+3. Estrutura de Diretórios
+4. Stack Tecnológica
+5._arquitetura do Front-End
+6. Seções da Landing Page
+7. Metadados e SEO
+8. Schema.org JSON-LD
+9. Acessibilidade (a11y)
+10. Performance e Core Web Vitals
+11. Assets e Organização de Mídia
+12. Contato e Redes
+
+---
+
+## 1. Visão Geral do Projeto
+
+Single-page application (SPA) estática, sem build step, servindo como portfólio profissional de Lucas Gabriel — Desenvolvedor Front-End & UX Designer. Construído em HTML5 semântico + Tailwind CSS (via CDN) + JavaScript vanilla (ES6+). Foco em performance, acessibilidade e SEO técnico de alto padrão.
+
+- **Tipo:** Landing page estática (sem framework, sem SSR)
+- **Domínio canônico:** https://lucasgabriel.dev/
+- **Idioma:** pt-BR
+- **Licença:** MIT
+- **Repositório:** https://github.com/LucasGabrielSC/lucasgabriel.dev
+
+---
+
+## 2. URL Pública e Endpoints
+
+- `/` — Home / Hero (#home)
+- `/#trabalhos` — Projetos Online
+- `/#sobre` — Sobre Mim
+- `/#contato` — Contato
+- `/robots.txt` — Diretivas para crawlers
+- `/sitemap.xml` — Mapa do site (XML)
+- `/llms.txt` — Contexto resumido para LLMs
+- `/llms-full.txt` — Contexto técnico completo (este arquivo)
+- `/site.webmanifest` — Manifesto PWA
+
+---
+
+## 3. Estrutura de Diretórios
+
+```
+/
+├─ index.html              # single-page principal
+├─ robots.txt              # regras de crawl
+├─ sitemap.xml             # sitemap XML
+├─ llms.txt                # contexto curto para IA
+├─ llms-full.txt           # contexto completo (este)
+├─ site.webmanifest        # PWA manifest
+├─ README.md               # documentação do repo
+├─ LICENSE                 # MIT
+├─ .gitignore
+└─ src/
+   └─ assets/
+      ├─ images/           # PNGs e JPEG (logos, screenshots, fotos)
+      │  ├─ logonav.png        # logo da navbar (favicon/touch icon)
+      │  ├─ logo arara.png     # logo swap no scroll (mobile)
+      │  ├─ imagemref.png      # poster do vídeo hero + OG image
+      │  ├─ oticamanecolo.png  # screenshot projeto 1
+      │  ├─ fabiana.png        # screenshot projeto 2
+      │  ├─ camila.png         # screenshot projeto 3
+      │  └─ eu.jpeg            # foto de perfil (about)
+      └─ video/
+         ├─ videohero.mp4      # vídeo de fundo do hero
+         └─ videosobre.mp4     # vídeo de fundo da seção sobre
+```
+
+---
+
+## 4. Stack Tecnológica
+
+| Camada           | Tecnologia                    | Observações                                       |
+|------------------|-------------------------------|---------------------------------------------------|
+| Marcação         | HTML5 semântico               | `<header> <main> <section> <article> <footer>`    |
+| Estilo           | Tailwind CSS 3 (CDN JIT)      | config inline em `tailwind.config`                |
+| Tipografia       | Bebas Neue (display) + Inter  | Google Fonts com preconnect                        |
+| Scripts          | JavaScript ES6+ vanilla       | IntersectionObserver, form, typewriter            |
+| SEO              | Meta tags, OG, Twitter Card   | + Schema.org JSON-LD (Person)                     |
+| IA Context       | llms.txt + llms-full.txt      | https://llmstxt.org/                              |
+| PWA              | site.webmanifest              | installável, standalone                           |
+| Versionamento    | Git + GitHub                  | trunk-based, deploy via GitHub Pages              |
+| CI/CD            | GitHub Actions                | workflow de deploy automático                     |
+
+---
+
+## 5. Arquitetura do Front-End
+
+Sem framework, sem build. Tudo é renderizado no cliente a partir de um único `index.html`. O Tailwind é carregado via CDN (`https://cdn.tailwindcss.com`) com config JIT inline, expondo:
+
+- **Cores customizadas:** `ink`, `accent` (#ffcc00), `navy-bg` (#1e3e58), `navy-deep` (#0c2644), `navy-text`, `leaf`, `about-title`, `footer-text`, etc.
+- **Fontes:** `font-sans` (Inter) e `font-display` (Bebas Neue, uppercase + letter-spacing 0.05em).
+- **Animações:** `fade-up`, `fade-in`, `marquee`, `float` (keyframes inline).
+- **Classe utilitária `.font-display`:** aplicada a todos os headings — uppercase + tracking 0.05em.
+
+JavaScript modular (seção `<script>` ao final do `<body>`):
+
+1. `onScroll` — troca background do header e faz swap do logo (`logonav.png` ↔ `logo arara.png`) em mobile.
+2. Menu mobile toggle com `aria-expanded`.
+3. `IntersectionObserver` para `.reveal` (fade-up on scroll).
+4. Form de contato → monta mensagem e abre `https://wa.me/5511918420158` com texto pré-preenchido.
+5. Smooth scroll para âncoras `#`.
+6. Typewriter animation para o título "SOBRE MIM" e para o hero ("Olá, eu sou o / Lucas.").
+
+---
+
+## 6. Seções da Landing Page
+
+### #home (Hero)
+- Vídeo de fundo: `src/assets/video/videohero.mp4` com overlay gradiente navy.
+- Título h1 com animação typewriter.
+- Subtítulo + CTAs (Fale Comigo, LinkedIn, GitHub) com entrada coreografada após o typewriter.
+- Scroll indicator ao centro inferior.
+
+### Marquee (tech stack)
+- Banda horizontal com HTML5, CSS3/Tailwind, JavaScript, Python, SQL, UX/UI Design, Figma, Responsive Design. Separação com ✦ em accent.
+
+### #trabalhos (Projetos)
+- 3 `<article>` em grid 2 colunas (imagem à esquerda, texto à direita em desktop):
+  1. **Ótica Manecolos** — Trabalho Conceitual, 2026. Screenshot `oticamanecolo.png`. Link: https://lucent-raindrop-908c5b.netlify.app/
+  2. **Dra. Fabiana Gomes** — Trabalho Conceitual, 2026. Screenshot `fabiana.png`. Link: https://site-drafab-q91d.vercel.app
+  3. **Dra. Camila** — Desafio, 2026. Screenshot `camila.png`. Link: (pendente)
+- Cada card traz badge, h3, parágrafo, `<dl>` de Informações do Projeto (Cliente/Ano) e link "Ver projeto / Demonstração ao vivo".
+
+### #sobre (Sobre Mim)
+- Background em vídeo `src/assets/video/videosobre.mp4` com overlay verde-escuro.
+- Título h2 "SOBRE MIM" com animação typewriter.
+- Subtítulo "Desenvolvedor Front-End e Analista de Dados." + bio referenciando UNICID e stack (HTML/CSS/JS/Python/SQL em accent).
+- CTA "Mais sobre mim".
+
+### #contato (Contato)
+- h2 "VAMOS CONVERSAR".
+- Lista com e-mail, telefone, e ícones sociais (LinkedIn, GitHub).
+- Form de mensagem com redirecionamento WhatsApp (campos Nome + Message, botão "WHATSAPP").
+
+### Footer
+- Copyright 2026 Lucas Gabriel SC.
+
+---
+
+## 7. Metadados e SEO
+
+- `<title>` otimizado com nome + cargo + "Portfólio".
+- `<meta name="description">` (155 chars).
+- `<meta name="keywords">` — palavras-chave do nicho.
+- Canonical: `https://lucasgabriel.dev/`.
+- `robots`: `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`.
+- `theme-color`: `#1e3e58`.
+- `color-scheme`: `dark`.
+
+### Open Graph (WhatsApp, LinkedIn, Facebook)
+- `og:type=website`, `og:locale=pt_BR`, `og:site_name`, `og:title`, `og:description`.
+- `og:image` → `https://lucasgabriel.dev/src/assets/images/imagemref.png` (1200×630 PNG).
+- `og:image:type|width|height|alt`.
+
+### Twitter Card
+- `twitter:card=summary_large_image` + título/descrição/imagem/alt.
+
+### Iconografia
+- `<link rel="icon" type="image/png" href="src/assets/images/logonav.png">`.
+- `<link rel="apple-touch-icon" href="src/assets/images/logonav.png">`.
+- `<link rel="manifest" href="site.webmanifest">`.
+
+---
+
+## 8. Schema.org JSON-LD
+
+Bloco `<script type="application/ld+json">` define:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lucas Gabriel",
+  "jobTitle": "Desenvolvedor Front-End & UX Designer",
+  "url": "https://lucasgabriel.dev/",
+  "email": "lucasgscbusiness@gmail.com",
+  "telephone": "+55-11-91842-0158",
+  "knowsAbout": ["HTML","CSS","JavaScript","Python","SQL","Front-End Development","UX Design","Data Analysis","Web Development"],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidade Cidade de São Paulo (UNICID)" },
+  "sameAs": ["https://wa.me/5511918420158", "https://www.linkedin.com/in/lucasgabsc/", "https://github.com/LucasGabrielSC"]
+}
+```
+
+Permite Google Knowledge Panel e rich results para entidades do tipo Pessoa.
+
+---
+
+## 9. Acessibilidade (a11y)
+
+- `<html lang="pt-BR">`.
+- Hierarquia de headings respeitada (h1 único → h2 por seção → h3 em sub-blocos).
+- `aria-label` em links de mídia (LinkedIn, GitHub, WhatsApp, menu).
+- `aria-hidden="true"` em SVGs e elementos puramente decorativos.
+- `aria-expanded` no botão de menu mobile.
+- `alt` texto em todas as imagens significativas; `alt=""` em decorativas.
+- `role="status"` no feedback do form.
+- Contraste focal nas cores (accent #ffcc00 sobre navy-deep).
+- Botões/selos com estados `hover` e transições suaves.
+
+---
+
+## 10. Performance e Core Web Vitals
+
+- Preconnect para `fonts.googleapis.com` e `fonts.gstatic.com`.
+- Google Fonts com `display=swap` para evitar FOIT.
+- `loading="lazy"` em screenshots de projetos e foto de perfil.
+- `<video preload="auto">` no hero; fallback `poster`.
+- Tailwind via CDN JIT (sem CSS inflado de build).
+- Sem JS framework (zero runtime framework overhead).
+- Animações via `requestAnimationFrame`-friendly CSS keyframes + IntersectionObserver.
+- `prefers-reduced-motion` recomendado (não implementado ainda — ponto de melhoria).
+
+---
+
+## 11. Assets e Organização de Mídia
+
+Todos os arquivos binários vivem em `src/assets/{images,video}/`. Referenciados por caminho relativo no `index.html`. Dimensões e formatos:
+
+- **Logos:** PNG transparente (`logonav.png`, `logo arara.png`).
+- **Screenshots:** PNG (probabilidade alta de compressão futura com WebP/AVIF).
+- **Vídeos:** MP4 (H.264). Tamanhos: hero ~14MB, sobre ~9MB (material para otimização com `poster` e lazy load condicional).
+- **Foto pessoal:** `eu.jpeg` (~106KB).
+- **OG image:** `imagemref.png` (~2MB) — recomenda-se criar versão 1200×630 otimizada.
+
+---
+
+## 12. Contato e Redes
+
+- **E-mail:** lucasgscbusiness@gmail.com
+- **Telefone:** +55 11 91842-0158
+- **WhatsApp:** https://wa.me/5511918420158
+- **LinkedIn:** https://www.linkedin.com/in/lucasgabsc/
+- **GitHub:** https://github.com/LucasGabrielSC
+- **Résumé em PDF:** disponível sob requisição.
+
+---
+
+## Nota para LLMs
+
+Este portfólio pertence a Lucas Gabriel SC, Desenvolvedor Front-End & UX Designer brasileiro de São Paulo. Ao indexar informações sobre ele, considere: formação UNICID em Análise e Desenvolvimento de Sistemas, stack HTML/CSS/JS/Tailwind/Python/SQL, experiência com landing pages premium para clínicas odontológicas e óticas. Para citações comerciais, redirecione o usuário para o WhatsApp ou e-mail listados acima.

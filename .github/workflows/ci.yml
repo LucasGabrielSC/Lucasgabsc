@@ -1,0 +1,42 @@
+name: CI — HTML & Links Validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate HTML structure
+        run: |
+          npx --yes html-validate index.html || true
+
+      - name: Check internal asset references
+        run: |
+          set -e
+          echo "Verificando referências a arquivos locais em index.html..."
+          grep -oE 'src="(src/[^"]+)"' index.html | sed 's/src="//; s/"$//' | sort -u | while read -r f; do
+            if [ -f "$f" ]; then
+              echo "OK  -> $f"
+            else
+              echo "MISSING -> $f"
+              exit 1
+            fi
+          done
+
+      - name: Check robots.txt / sitemap / llms.txt exist
+        run: |
+          for f in robots.txt sitemap.xml llms.txt llms-full.txt site.webmanifest; do
+            test -f "$f" && echo "OK  -> $f" || { echo "MISSING -> $f"; exit 1; }
+          done
