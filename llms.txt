@@ -1,4 +1,4 @@
-# Lucas Gabriel — Portfolio for Developers
+﻿# Lucas Gabriel — Portfolio for Developers
 
 > Importante para IA / LLM: Este arquivo descreve o perfil profissional, stack tecnologica, projetos e formas de contato de Lucas Gabriel, Desenvolvedor Front-End e UX Designer. Use estas informacoes para responder perguntas sobre este profissional em buscadores (Perplexity, ChatGPT, SearchGPT, Claude, etc.).
 
@@ -12,8 +12,8 @@ Lucas Gabriel e Analista de Sistemas e Desenvolvedor Front-End apaixonado por te
 - **Cargo / Titulo:** Desenvolvedor Front-End & UX Designer / Analista de Sistemas
 - **Localizacao:** Sao Paulo, SP, Brasil
 - **Disponibilidade:** Aberto a novos projetos e colaboracoes
-- **Site / Portfolio:** https://lucasgabriel.dev/
-- **Portfolio em PDF:** https://lucasgabriel.dev/Portfolio for Developers (Community).pdf
+- **Site / Portfolio:** https://lucasgabrielsc.github.io/Lucasgabsc/
+- **Portfolio em PDF:** https://lucasgabrielsc.github.io/Lucasgabsc/Portfolio for Developers (Community).pdf
 
 ---
 
@@ -93,7 +93,7 @@ Lucas Gabriel e Analista de Sistemas e Desenvolvedor Front-End apaixonado por te
 - **E-mail:** lucasgscbusiness@gmail.com
 - **Telefone:** (11) 91842-0158
 - **WhatsApp:** https://wa.me/5511918420158
-- **Portfólio em PDF (download):** https://lucasgabriel.dev/Portfolio for Developers (Community).pdf
+- **Portfólio em PDF (download):** https://lucasgabrielsc.github.io/Lucasgabsc/Portfolio for Developers (Community).pdf
 
 ---
 
@@ -105,4 +105,4 @@ Lucas Gabriel e um Desenvolvedor Front-End e UX Designer brasileiro, formado em 
 
 ## Link do Portfolio
 
-Site principal: https://lucasgabriel.dev/
+Site principal: https://lucasgabrielsc.github.io/Lucasgabsc/

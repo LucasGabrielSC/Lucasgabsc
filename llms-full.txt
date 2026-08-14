@@ -1,6 +1,6 @@
-# Lucas Gabriel — Portfólio (llms-full.txt)
+﻿# Lucas Gabriel — Portfólio (llms-full.txt)
 
-> Este arquivo estende o `llms.txt` com a estrutura técnica completa do projeto para assistentes de IA. Contextualiza a arquitetura, os endpoints, a organização de arquivos, a stack e o propósito de cada componente do portfólio publicado em https://lucasgabriel.dev/
+> Este arquivo estende o `llms.txt` com a estrutura técnica completa do projeto para assistentes de IA. Contextualiza a arquitetura, os endpoints, a organização de arquivos, a stack e o propósito de cada componente do portfólio publicado em https://lucasgabrielsc.github.io/Lucasgabsc/
 
 ---
 
@@ -26,10 +26,10 @@
 Single-page application (SPA) estática, sem build step, servindo como portfólio profissional de Lucas Gabriel — Desenvolvedor Front-End & UX Designer. Construído em HTML5 semântico + Tailwind CSS (via CDN) + JavaScript vanilla (ES6+). Foco em performance, acessibilidade e SEO técnico de alto padrão.
 
 - **Tipo:** Landing page estática (sem framework, sem SSR)
-- **Domínio canônico:** https://lucasgabriel.dev/
+- **Domínio canônico:** https://lucasgabrielsc.github.io/Lucasgabsc/
 - **Idioma:** pt-BR
 - **Licença:** MIT
-- **Repositório:** https://github.com/LucasGabrielSC/lucasgabriel.dev
+- **Repositório:** https://github.com/LucasGabrielSC/Lucasgabsc
 
 ---
 
@@ -152,14 +152,14 @@ JavaScript modular (seção `<script>` ao final do `<body>`):
 - `<title>` otimizado com nome + cargo + "Portfólio".
 - `<meta name="description">` (155 chars).
 - `<meta name="keywords">` — palavras-chave do nicho.
-- Canonical: `https://lucasgabriel.dev/`.
+- Canonical: `https://lucasgabrielsc.github.io/Lucasgabsc/`.
 - `robots`: `index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1`.
 - `theme-color`: `#1e3e58`.
 - `color-scheme`: `dark`.
 
 ### Open Graph (WhatsApp, LinkedIn, Facebook)
 - `og:type=website`, `og:locale=pt_BR`, `og:site_name`, `og:title`, `og:description`.
-- `og:image` → `https://lucasgabriel.dev/src/assets/images/imagemref.png` (1200×630 PNG).
+- `og:image` → `https://lucasgabrielsc.github.io/Lucasgabsc/src/assets/images/imagemref.png` (1200×630 PNG).
 - `og:image:type|width|height|alt`.
 
 ### Twitter Card
@@ -182,7 +182,7 @@ Bloco `<script type="application/ld+json">` define:
   "@type": "Person",
   "name": "Lucas Gabriel",
   "jobTitle": "Desenvolvedor Front-End & UX Designer",
-  "url": "https://lucasgabriel.dev/",
+  "url": "https://lucasgabrielsc.github.io/Lucasgabsc/",
   "email": "lucasgscbusiness@gmail.com",
   "telephone": "+55-11-91842-0158",
   "knowsAbout": ["HTML","CSS","JavaScript","Python","SQL","Front-End Development","UX Design","Data Analysis","Web Development"],

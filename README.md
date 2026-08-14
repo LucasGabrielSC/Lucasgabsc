@@ -1,4 +1,4 @@
-# Lucas Gabriel — Portfólio :rocket:
+﻿# Lucas Gabriel — Portfólio :rocket:
 
 > Landing page / portfólio profissional de **Lucas Gabriel** — Desenvolvedor Front-End & UX Designer.
 > Single-page estática, sem build step, otimizada para SEO, acessibilidade e Core Web Vitals.
@@ -46,7 +46,7 @@ Portfólio single-page (SPA estática) apresentando: hero com vídeo de fundo, m
 
 ## Demo Online
 
-Produção: **https://lucasgabriel.dev/**
+Produção: **https://lucasgabrielsc.github.io/Lucasgabsc/**
 
 ---
 
@@ -156,7 +156,7 @@ O workflow `.github/workflows/deploy.yml` publica automaticamente em `gh-pages` 
 2. Repositório → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. O deploy acontece no próximo push em `main`. A URL será `https://<usuario>.github.io/<repo>/`.
 
-> Para usar um domínio customizado (lucasgabriel.dev), configure um arquivo `CNAME` na raiz do repo publicando, ou ajuste acesse **Settings → Pages → Custom domain**.
+> Para usar um domínio customizado, configure um arquivo `CNAME` na raiz do repo publicando, ou ajuste acesse **Settings → Pages → Custom domain**.
 
 ### Alternativa: Vercel / Netlify
 
@@ -181,13 +181,13 @@ Ambos detectam o `site.webmanifest` e servem os assets com CDN global.
 | IA context | llms.txt / llms-full.txt                |
 | PWA        | site.webmanifest                        |
 | CI/CD      | GitHub Actions                          |
-| Domínio    | lucasgabriel.dev                        |
+| Domínio    | lucasgabrielsc.github.io/Lucasgabsc       |
 
 ---
 
 ## Contato
 
-- **Site:** https://lucasgabriel.dev/
+- **Site:** https://lucasgabrielsc.github.io/Lucasgabsc/
 - **E-mail:** lucasgscbusiness@gmail.com
 - **Telefone:** +55 11 91842-0158
 - **WhatsApp:** https://wa.me/5511918420158

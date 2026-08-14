@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.sitemaps.org/schemas/sitemap-image/1.1"
         xmlns:video="http://www.sitemaps.org/schemas/sitemap-video/1.1">
 
   <!-- Home / Hero -->
   <url>
-    <loc>https://lucasgabriel.dev/#home</loc>
+    <loc>https://lucasgabrielsc.github.io/Lucasgabsc/#home</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Projetos -->
   <url>
-    <loc>https://lucasgabriel.dev/#trabalhos</loc>
+    <loc>https://lucasgabrielsc.github.io/Lucasgabsc/#trabalhos</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://lucasgabriel.dev/src/assets/images/oticamanecolo.png</image:loc>
+      <image:loc>https://lucasgabrielsc.github.io/Lucasgabsc/src/assets/images/oticamanecolo.png</image:loc>
       <image:title>Landing page Ótica Manecolos</image:title>
       <image:caption>Trabalho Conceitual — Ótica Manecolos</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://lucasgabriel.dev/src/assets/images/fabiana.png</image:loc>
+      <image:loc>https://lucasgabrielsc.github.io/Lucasgabsc/src/assets/images/fabiana.png</image:loc>
       <image:title>Landing page Dra. Fabiana Gomes</image:title>
       <image:caption>Trabalho Conceitual — Dra. Fabiana Gomes</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://lucasgabriel.dev/src/assets/images/camila.png</image:loc>
+      <image:loc>https://lucasgabrielsc.github.io/Lucasgabsc/src/assets/images/camila.png</image:loc>
       <image:title>Landing page Dra. Camila</image:title>
       <image:caption>Desafio — Dra. Camila</image:caption>
     </image:image>
@@ -34,14 +34,14 @@
 
   <!-- Sobre Mim -->
   <url>
-    <loc>https://lucasgabriel.dev/#sobre</loc>
+    <loc>https://lucasgabrielsc.github.io/Lucasgabsc/#sobre</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Contato -->
   <url>
-    <loc>https://lucasgabriel.dev/#contato</loc>
+    <loc>https://lucasgabrielsc.github.io/Lucasgabsc/#contato</loc>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>

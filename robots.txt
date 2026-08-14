@@ -1,5 +1,5 @@
-# robots.txt — Portfólio Lucas Gabriel
-# https://lucasgabriel.dev/
+﻿# robots.txt — Portfólio Lucas Gabriel
+# https://lucasgabrielsc.github.io/Lucasgabsc/
 # Permite indexação completa por motores de busca e crawlers de IA.
 
 User-agent: *
@@ -58,4 +58,4 @@ User-agent: Twitterbot
 Allow: /
 
 # Sitemap principal
-Sitemap: https://lucasgabriel.dev/sitemap.xml
+Sitemap: https://lucasgabrielsc.github.io/Lucasgabsc/sitemap.xml
