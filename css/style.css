@@ -1,0 +1,465 @@
+/* ========================================
+   PORTFOLIO LUCAS GABRIEL — Custom Styles
+   Design System: Blue Scale (sober, dark)
+   Easings: Emil Kowalski (strong cubic-bézier)
+   ======================================== */
+
+:root {
+  /* Palette — Blue Scale + neutrals, no accent beyond blue */
+  --night:    #00468F;  /* Azul Escuro — base do site */
+  --deep:     #004E9C;  /* Azul Profundo — seções de contraste */
+  --royal:    #2E74B7;  /* Azul Royal — divisores / bordas */
+  --input:    #1A77CD;  /* Azul Intenso — inputs / containers */
+  --vibrant:  #137AD7;  /* Azul Vibrante — overlays / gradientes */
+  --electric: #0071D2;  /* Azul Elétrico — destaques / links */
+  --sky:      #5BA9EA;  /* Azul Céu — hover / micro */
+  --cyan:     #36A9E1;  /* Ciano Azul — glow / focus */
+  --white:    #FFFFFF;
+  --soft:     #F5F9FD;  /* Branco Suave — parágrafos */
+  --ice:      #DCEBFA;  /* Azul Muito Claro — rótulos */
+  --steel:    #AFC7DE;  /* Azul Cinza — metadados / rodapé */
+  --graphite: #17324D;  /* Azul Grafite — cards claros */
+  --graphite2:#243746;  /* Grafite — cards claros */
+
+  /* Light-surface helpers (Projects section) */
+  --surface:  #FFFFFF;  /* Fundo claro */
+  --azure:    #4B6579;  /* Azul Acinzentado — rótulos sobre claro */
+  --azure-deep: #00468F;/* Base escura (harmonia com sobre) */
+
+  /* Easings — Emil Kowalski curves */
+  --ease-out-quart:   cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-quint: cubic-bezier(0.83, 0, 17, 1);
+  --ease-soft:        cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows — deep-blue based, no black */
+  --shadow-sm:  0 1px 2px rgba(0, 70, 143, 0.08),
+                0 1px 1px rgba(0, 70, 143, 0.04);
+  --shadow-md:  0 4px 12px rgba(0, 70, 143, 0.10),
+                0 2px 4px rgba(0, 70, 143, 0.06);
+  --shadow-lg:  0 10px 30px rgba(0, 70, 143, 0.12),
+                0 4px 12px rgba(0, 70, 143, 0.06);
+  --shadow-xl:  0 20px 48px rgba(0, 70, 143, 0.18),
+                0 8px 20px rgba(0, 70, 143, 0.10);
+
+  /* Gradients — blue-only */
+  --gradient-night:   linear-gradient(135deg, #00468F 0%, #004E9C 100%);
+  --gradient-about:   linear-gradient(180deg, #004E9C 0%, #00468F 100%);
+  --gradient-overlay:
+    linear-gradient(180deg,
+      rgba(0, 78, 156, 0.45) 0%,
+      rgba(0, 70, 143, 0.75) 50%,
+      rgba(0, 70, 143, 1) 100%);
+  --gradient-overlay-mobile:
+    linear-gradient(180deg,
+      rgba(0, 78, 156, 0.65) 0%,
+      rgba(0, 70, 143, 0.85) 50%,
+      rgba(0, 70, 143, 1) 100%);
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--night);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ---------- Hero / About overlays ---------- */
+.hero-overlay,
+.about-bg-overlay {
+  background: var(--gradient-overlay);
+}
+
+/* ---------- Grid Background (About section) ---------- */
+.about-grid-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(19, 122, 215, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(19, 122, 215, 0.18) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, #000 20%, transparent 100%);
+  z-index: 1;
+}
+
+/* ---------- Grain texture ---------- */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(175, 199, 222, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Project cards (Scroll Stack) ---------- */
+.projects-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.project-card {
+  position: sticky;
+  top: 6rem;
+  background: var(--soft);
+  border: 1px solid rgba(0, 70, 143, 0.12);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 70, 143, 0.08);
+  transition:
+    transform 400ms var(--ease-out-quart),
+    box-shadow 400ms var(--ease-out-quart);
+}
+
+.project-card:nth-child(1) {
+  top: 5rem;
+  z-index: 1;
+}
+
+.project-card:nth-child(2) {
+  top: 6.5rem;
+  z-index: 2;
+}
+
+.project-card:nth-child(3) {
+  top: 8rem;
+  z-index: 3;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    box-shadow: 0 20px 48px rgba(0, 70, 143, 0.15);
+  }
+}
+
+/* ---------- Image wrapper + frame ---------- */
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.img-wrap img {
+  transition:
+    transform 800ms var(--ease-out-quart),
+    filter 500ms var(--ease-out-quart);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .img-wrap img {
+    transform: scale(1.04);
+  }
+}
+
+.project-img-frame {
+  background: var(--night);
+  border: 1px solid rgba(0, 70, 143, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 70, 143, 0.12);
+  transition:
+    border-color 400ms var(--ease-out-quart),
+    box-shadow 400ms var(--ease-out-quart);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-img-frame {
+    border-color: var(--electric);
+    box-shadow: 0 16px 40px rgba(0, 70, 143, 0.20);
+  }
+}
+
+.project-img-link {
+  display: block;
+  cursor: pointer;
+}
+
+/* ---------- Custom scrollbar ---------- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--night); }
+::-webkit-scrollbar-thumb {
+  background: var(--royal);
+  border-radius: 10px;
+  transition: background 300ms var(--ease-out-quart);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--sky); }
+
+/* ---------- Underline link (nav) ---------- */
+.link-underline {
+  position: relative;
+  display: inline-block;
+  transition: color 300ms var(--ease-out-quart);
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--sky);
+  transition: width 350ms var(--ease-out-quart);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link-underline:hover::after { width: 100%; }
+}
+
+/* ---------- Marquee mask ---------- */
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 900ms var(--ease-out-quart),
+    transform 900ms var(--ease-out-quart);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Divider line ---------- */
+.divider-line {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ---------- Typewriter cursor ---------- */
+.typing-cursor::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--sky);
+  animation: blink 0.8s var(--ease-in-out-quint) infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ========================================
+   INTERACTIVE STATES — Blue-bound
+   ======================================== */
+
+/* "Ver projeto" link inside project cards (Light surface) */
+.project-cta {
+  transition:
+    color 300ms var(--ease-soft),
+    gap 300ms var(--ease-soft);
+}
+
+.project-cta svg {
+  transition: transform 300ms var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-cta { gap: 0.75rem; color: #004E9C; }
+  .project-card:hover .project-cta svg { transform: translate(2px, -2px); color: var(--electric); }
+}
+
+/* "Mais sobre mim" arrow link (Dark surface) */
+.about-cta {
+  transition: color 300ms var(--ease-soft);
+}
+
+.about-arrow {
+  transition: transform 300ms var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-cta:hover { color: var(--white); }
+  .about-cta:hover .about-arrow { transform: translateX(4px); }
+}
+
+/* ========================================
+   BUTTONS — unified pressable surface
+   ======================================== */
+
+/* Social icon buttons (hero + contact) */
+.btn-icon {
+  transition:
+    transform 300ms var(--ease-out-quart),
+    background 300ms var(--ease-out-quart),
+    border-color 300ms var(--ease-out-quart),
+    color 300ms var(--ease-out-quart),
+    box-shadow 300ms var(--ease-out-quart);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-icon:hover { transform: scale(1.06); }
+}
+
+.btn-icon:active { transform: scale(0.96); }
+
+/* Primary / ghost CTA buttons (shared) */
+.btn-primary,
+.btn-ghost {
+  transition:
+    transform 300ms var(--ease-soft),
+    box-shadow 300ms var(--ease-soft),
+    background 300ms var(--ease-soft),
+    color 300ms var(--ease-soft),
+    border-color 300ms var(--ease-soft);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover,
+  .btn-ghost:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0 16px rgba(91, 169, 234, 0.40), 0 4px 12px rgba(0, 70, 143, 0.15);
+  }
+}
+
+.btn-primary:active,
+.btn-ghost:active { transform: translateY(0) scale(0.98); }
+
+/* Hamburger menu button */
+#menu-btn {
+  transition:
+    background 300ms var(--ease-out-quart),
+    border-color 300ms var(--ease-out-quart),
+    transform 200ms var(--ease-out-quart);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #menu-btn:hover {
+    background: rgba(91, 169, 234, 0.10);
+    border-color: rgba(91, 169, 234, 0.40);
+  }
+}
+
+#menu-btn:active { transform: scale(0.95); }
+
+/* ========================================
+   FORMS — refined focus + inline feedback
+   ======================================== */
+.form-field {
+  transition:
+    background 300ms var(--ease-soft),
+    border-color 300ms var(--ease-soft),
+    box-shadow 300ms var(--ease-soft);
+}
+
+.form-field:focus {
+  background: rgba(26, 119, 205, 0.30);
+  border-color: var(--electric);
+  box-shadow: 0 0 0 3px rgba(0, 113, 210, 0.35);
+}
+
+.form-error {
+  font-size: 0.8125rem;
+  color: var(--sky);
+  margin-top: 0.5rem;
+  min-height: 1.25rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 200ms var(--ease-out-quart),
+    transform 200ms var(--ease-out-quart);
+}
+
+.form-error.is-shown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-success {
+  font-size: 0.875rem;
+  color: var(--sky);
+  margin-top: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  background: rgba(91, 169, 234, 0.10);
+  border: 1px solid rgba(91, 169, 234, 0.30);
+  border-radius: 6px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 300ms var(--ease-out-quart),
+    transform 300ms var(--ease-out-quart);
+}
+
+.form-success.is-shown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========================================
+   FOCUS VISIBLE — accessibility
+   ======================================== */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--electric);
+  outline-offset: 2px;
+}
+
+.btn-icon:focus-visible {
+  outline: 2px solid var(--electric);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   SCROLL INDICATOR — subtle float
+   ======================================== */
+@keyframes scrollFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(-6px); }
+}
+
+@media (min-width: 768px) {
+  a[aria-label="Rolar para Projetos"] {
+    animation: scrollFloat 3s var(--ease-in-out-quint) infinite;
+  }
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .about-bg-overlay {
+    background: var(--gradient-overlay-mobile);
+  }
+
+  .project-card { margin-top: 3rem; }
+
+  @media (hover: hover) and (pointer: fine) {
+    .project-card:hover { transform: translateY(-3px); }
+  }
+}
+
+@media (min-width: 768px) {
+  section[id="trabalhos"],
+  section[id="sobre"],
+  section[id="contato"] {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION — accessibility
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal { opacity: 1; transform: none; }
+}

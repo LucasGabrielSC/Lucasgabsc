@@ -26,13 +26,27 @@ jobs:
         run: |
           set -e
           echo "Verificando referências a arquivos locais em index.html..."
-          grep -oE 'src="(src/[^"]+)"' index.html | sed 's/src="//; s/"$//' | sort -u | while read -r f; do
+          grep -oE 'src="(assets/[^"]+)"' index.html | sed 's/src="//; s/"$//' | sort -u | while read -r f; do
             if [ -f "$f" ]; then
               echo "OK  -> $f"
             else
               echo "MISSING -> $f"
               exit 1
             fi
+          done
+          grep -oE 'href="(assets/[^"]+)"' index.html | sed 's/href="//; s/"$//' | sort -u | while read -r f; do
+            if [ -f "$f" ]; then
+              echo "OK  -> $f"
+            else
+              echo "MISSING -> $f"
+              exit 1
+            fi
+          done
+
+      - name: Check CSS and JS files exist
+        run: |
+          for f in css/style.css js/main.js; do
+            test -f "$f" && echo "OK  -> $f" || { echo "MISSING -> $f"; exit 1; }
           done
 
       - name: Check robots.txt / sitemap / llms.txt exist
