@@ -7,6 +7,33 @@
 (function () {
   'use strict';
 
+  // ===== Always start at the top on page refresh =====
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+  window.addEventListener('beforeunload', () => {
+    window.scrollTo(0, 0);
+  });
+
+  // ===== Hero Video Smooth Fade-in =====
+  const heroVideo = document.getElementById('hero-video');
+  if (heroVideo) {
+    const revealVideo = () => {
+      heroVideo.classList.add('is-loaded');
+    };
+
+    if (heroVideo.readyState >= 2) {
+      revealVideo();
+    } else {
+      heroVideo.addEventListener('loadeddata', revealVideo, { once: true });
+      heroVideo.addEventListener('playing', revealVideo, { once: true });
+      heroVideo.addEventListener('canplay', revealVideo, { once: true });
+      // Fallback in case of slow connection
+      setTimeout(revealVideo, 2500);
+    }
+  }
+
   // ===== Header background & logo swap on scroll =====
   const header = document.getElementById('site-header');
   const nav = document.getElementById('site-nav');
@@ -191,6 +218,69 @@
     typeObserver.observe(aboutTitle);
   }
 
+  // ===== Typewriter: PROJETOS ONLINE (with temporary scroll lock) =====
+  const projectsTitle = document.getElementById('projects-title');
+  const projectsSubtitle = document.getElementById('projects-subtitle');
+  const projectsContainer = document.getElementById('scroll-stack-container');
+
+  if (projectsTitle) {
+    const textToType = 'PROJETOS ONLINE';
+    const projObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            projObserver.unobserve(entry.target);
+
+            // Temporarily lock scroll so user experiences the full animation
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+
+            const unlockScroll = () => {
+              document.documentElement.style.overflow = '';
+              document.body.style.overflow = '';
+            };
+
+            projectsTitle.textContent = '';
+            projectsTitle.classList.add('typing-cursor');
+            let charIndex = 0;
+            const typingInterval = setInterval(() => {
+              if (charIndex < textToType.length) {
+                projectsTitle.textContent += textToType.charAt(charIndex);
+                charIndex++;
+              } else {
+                clearInterval(typingInterval);
+                setTimeout(
+                  () => projectsTitle.classList.remove('typing-cursor'),
+                  1200
+                );
+
+                // Reveal paragraph
+                setTimeout(() => {
+                  if (projectsSubtitle) {
+                    projectsSubtitle.classList.add('is-visible');
+                  }
+                }, 100);
+
+                // Reveal cards container and unlock scroll immediately after
+                setTimeout(() => {
+                  if (projectsContainer) {
+                    projectsContainer.classList.add('is-visible');
+                  }
+                  unlockScroll();
+                }, 350);
+              }
+            }, 80);
+
+            // Safety fallback: ensure scroll is always unlocked even if interrupted
+            setTimeout(unlockScroll, 2800);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    projObserver.observe(projectsTitle);
+  }
+
   // ===== Typewriter & Choreography: HERO =====
   const heroTitle = document.getElementById('hero-title');
   const heroLine1 = document.getElementById('hero-line1');
@@ -244,4 +334,50 @@
       }
     }, 55);
   }
+
+  // ===== ScrollStack: Dynamic stack effect =====
+  (function initScrollStack() {
+    const container = document.getElementById('scroll-stack-container');
+    if (!container) return;
+
+    const rows = Array.from(container.querySelectorAll('.scroll-stack-row'));
+    const total = rows.length;
+    if (total === 0) return;
+
+    // Respect prefers-reduced-motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+
+    function tick() {
+      const topOffset = 90;
+
+      rows.forEach((row, i) => {
+        // The last card always stays at full scale
+        if (i === total - 1) {
+          row.style.transform = 'scale(1)';
+          return;
+        }
+
+        const nextRow = rows[i + 1];
+        if (!nextRow) return;
+
+        const nextRect = nextRow.getBoundingClientRect();
+        const viewH = window.innerHeight;
+
+        // Progress advances as the next card scrolls from viewport bottom up to sticky top
+        const progress = clamp((viewH - nextRect.top) / Math.max(viewH - topOffset, 1), 0, 1);
+        const targetScale = 1 - (total - 1 - i) * 0.04;
+        const scale = 1 - progress * (1 - targetScale);
+
+        row.style.transform = `scale(${scale})`;
+      });
+    }
+
+    window.addEventListener('scroll', tick, { passive: true });
+    window.addEventListener('resize', tick, { passive: true });
+    tick(); // run once on load
+  })();
+
 })();
