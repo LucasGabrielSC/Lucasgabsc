@@ -7,13 +7,26 @@
 (function () {
   'use strict';
 
-  // ===== Always start at the top on page refresh =====
+  // ===== Always start at the top on page refresh (unless navigating to anchor) =====
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
-  window.scrollTo(0, 0);
-  window.addEventListener('beforeunload', () => {
+  if (window.location.hash) {
+    window.addEventListener('load', () => {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
+    });
+  } else {
     window.scrollTo(0, 0);
+  }
+  window.addEventListener('beforeunload', () => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   });
 
   // ===== Hero Video Smooth Fade-in =====
