@@ -60,35 +60,50 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="font-sans antialiased bg-night text-white flex min-h-screen flex-col selection:bg-sky/20 selection:text-white">
+<body
+    class="font-sans antialiased bg-night text-white flex min-h-screen flex-col selection:bg-sky/20 selection:text-white">
 
     <!-- ================== HEADER ================== -->
     <header class="fixed inset-x-0 top-0 z-50 border-b border-royal/40 bg-night/90 backdrop-blur-md" id="site-header">
-        <nav id="site-nav"
-            class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-10">
+        <nav id="site-nav" class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-10">
             <a href="index.html" class="flex items-center gap-3 group" aria-label="Lucas Gabriel — Início">
                 <img id="nav-logo" src="assets/images/logonav.png" alt="Lucas Gabriel"
                     class="h-8 sm:h-10 w-auto max-w-[120px] object-contain transition-transform duration-300 group-hover:scale-105" />
             </a>
 
             <ul class="hidden items-center gap-8 md:flex">
-                <li><a href="index.html#trabalhos" class="link-underline text-sm font-medium hover:text-sky transition">Trabalhos</a></li>
-                <li><a href="servicos.html" class="link-underline text-sm font-medium hover:text-sky transition">Serviços</a></li>
-                <li><a href="index.html#sobre" class="link-underline text-sm font-medium hover:text-sky transition">Sobre</a></li>
-                <li><a href="index.html#contato" class="link-underline text-sm font-medium hover:text-sky transition">Contato</a></li>
+                <li><a href="index.html#trabalhos"
+                        class="link-underline text-sm font-medium hover:text-sky transition">Trabalhos</a></li>
+                <li><a href="servicos.html"
+                        class="link-underline text-sm font-medium hover:text-sky transition">Serviços</a></li>
+                <li><a href="index.html#sobre"
+                        class="link-underline text-sm font-medium hover:text-sky transition">Sobre</a></li>
+                <li><a href="index.html#contato"
+                        class="link-underline text-sm font-medium hover:text-sky transition">Contato</a></li>
             </ul>
 
             <div class="flex items-center gap-2 sm:gap-3">
                 <button id="btn-toggle-theme"
                     class="btn-ghost inline-flex items-center gap-1.5 rounded-full border border-royal/50 bg-royal/10 px-3 py-1.5 text-xs font-medium text-steel hover:border-sky hover:bg-sky/15 hover:text-sky transition"
                     title="Alternar para modo claro" aria-label="Alternar tema">
-                    <svg id="theme-icon-sun" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-                    <svg id="theme-icon-moon" class="h-3.5 w-3.5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                    <svg id="theme-icon-sun" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg id="theme-icon-moon" class="h-3.5 w-3.5 hidden" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
                     <span id="theme-label" class="hidden sm:inline">Modo claro</span>
                 </button>
                 <button id="btn-nova-simulacao-header"
                     class="btn-ghost inline-flex items-center gap-2 rounded-full border border-royal/50 bg-royal/10 px-4 py-1.5 text-xs font-medium text-steel hover:border-sky hover:bg-sky/15 hover:text-sky transition">
-                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
                     Nova simulação
                 </button>
 
@@ -109,10 +124,18 @@
         <div id="mobile-menu" class="hidden md:hidden">
             <div class="mx-4 mb-4 rounded-2xl border border-royal/40 bg-night/95 p-6 backdrop-blur-xl shadow-2xl">
                 <ul class="flex flex-col gap-5 text-center">
-                    <li><a href="index.html#trabalhos" class="link-underline text-sm font-medium text-steel hover:text-sky transition">Trabalhos</a></li>
-                    <li><a href="servicos.html" class="link-underline text-sm font-medium text-steel hover:text-sky transition">Serviços</a></li>
-                    <li><a href="index.html#sobre" class="link-underline text-sm font-medium text-steel hover:text-sky transition">Sobre</a></li>
-                    <li><a href="index.html#contato" class="link-underline text-sm font-medium text-steel hover:text-sky transition">Contato</a></li>
+                    <li><a href="index.html#trabalhos"
+                            class="link-underline text-sm font-medium text-steel hover:text-sky transition">Trabalhos</a>
+                    </li>
+                    <li><a href="servicos.html"
+                            class="link-underline text-sm font-medium text-steel hover:text-sky transition">Serviços</a>
+                    </li>
+                    <li><a href="index.html#sobre"
+                            class="link-underline text-sm font-medium text-steel hover:text-sky transition">Sobre</a>
+                    </li>
+                    <li><a href="index.html#contato"
+                            class="link-underline text-sm font-medium text-steel hover:text-sky transition">Contato</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -139,27 +162,42 @@
                 <div class="lg:col-span-7 space-y-5">
 
                     <!-- Operator settings (collapsible) -->
-                    <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
-                        <button type="button" id="toggle-operator-settings" class="w-full flex items-center justify-between text-left group" aria-expanded="false">
-                            <h2 class="font-display text-xl uppercase tracking-wider text-steel group-hover:text-ice transition">
+                    <div
+                        class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
+                        <button type="button" id="toggle-operator-settings"
+                            class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+                            <h2
+                                class="font-display text-xl uppercase tracking-wider text-steel group-hover:text-ice transition">
                                 Configurações do operador
-                                <span id="operator-status-badge" class="hidden ml-2 text-[10px] font-sans font-semibold uppercase tracking-widest text-sky/70 bg-sky/10 border border-sky/20 rounded-full px-2 py-0.5 align-middle">Confirmado</span>
+                                <span id="operator-status-badge"
+                                    class="hidden ml-2 text-[10px] font-sans font-semibold uppercase tracking-widest text-sky/70 bg-sky/10 border border-sky/20 rounded-full px-2 py-0.5 align-middle">Confirmado</span>
                             </h2>
-                            <svg id="chevron-operator" class="h-4 w-4 text-steel transition-transform duration-300 group-hover:text-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                            <svg id="chevron-operator"
+                                class="h-4 w-4 text-steel transition-transform duration-300 group-hover:text-sky"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
                         </button>
                         <div id="operator-collapsible" class="collapsible-wrapper is-collapsed">
                             <div class="collapsible-inner">
                                 <div class="pt-4 space-y-3">
                                     <div>
-                                        <label for="operator-name" class="block text-xs font-medium text-ice mb-1.5">Nome do operador</label>
+                                        <label for="operator-name"
+                                            class="block text-xs font-medium text-ice mb-1.5">Nome do operador</label>
                                         <input type="text" id="operator-name" placeholder="Ex.: Lucas Gabriel"
-                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none" autocomplete="off" />
-                                        <p id="operator-name-error" class="form-error text-xs mt-1" aria-live="polite"></p>
+                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none"
+                                            autocomplete="off" />
+                                        <p id="operator-name-error" class="form-error text-xs mt-1" aria-live="polite">
+                                        </p>
                                     </div>
                                     <div id="operator-confirm-area">
                                         <button type="button" id="btn-confirm-operator"
                                             class="btn-ghost inline-flex items-center gap-2 rounded-full border border-electric/60 bg-electric/20 px-5 py-2 text-sm font-medium text-white backdrop-blur hover:border-sky hover:bg-sky hover:text-night transition">
-                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M5 13l4 4L19 7" />
+                                            </svg>
                                             Confirmar configurações
                                         </button>
                                     </div>
@@ -172,23 +210,37 @@
                     </div>
 
                     <!-- Client data (collapsible) -->
-                    <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
-                        <button type="button" id="toggle-client-data" class="w-full flex items-center justify-between text-left group" aria-expanded="false">
-                            <h2 class="font-display text-xl uppercase tracking-wider text-steel group-hover:text-ice transition">Dados do cliente <span class="text-sky/50 font-normal lowercase font-sans text-xs">(opcional)</span></h2>
-                            <svg id="chevron-client" class="h-4 w-4 text-steel transition-transform duration-300 group-hover:text-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    <div
+                        class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
+                        <button type="button" id="toggle-client-data"
+                            class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+                            <h2
+                                class="font-display text-xl uppercase tracking-wider text-steel group-hover:text-ice transition">
+                                Dados do cliente <span
+                                    class="text-sky/50 font-normal lowercase font-sans text-xs">(opcional)</span></h2>
+                            <svg id="chevron-client"
+                                class="h-4 w-4 text-steel transition-transform duration-300 group-hover:text-sky"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
                         </button>
                         <div id="client-collapsible" class="collapsible-wrapper is-collapsed">
                             <div class="collapsible-inner">
                                 <div id="client-fields" class="pt-4 grid gap-4 sm:grid-cols-2">
                                     <div>
-                                        <label for="client-name" class="block text-xs font-medium text-ice mb-1.5">Nome do cliente</label>
+                                        <label for="client-name" class="block text-xs font-medium text-ice mb-1.5">Nome
+                                            do cliente</label>
                                         <input type="text" id="client-name" placeholder="Ex.: João Silva"
-                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none" autocomplete="off" />
+                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none"
+                                            autocomplete="off" />
                                     </div>
                                     <div>
-                                        <label for="client-phone" class="block text-xs font-medium text-ice mb-1.5">Telefone / WhatsApp</label>
+                                        <label for="client-phone"
+                                            class="block text-xs font-medium text-ice mb-1.5">Telefone /
+                                            WhatsApp</label>
                                         <input type="tel" id="client-phone" placeholder="(11) 91234-5678"
-                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none" autocomplete="off" />
+                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none"
+                                            autocomplete="off" />
                                         <p id="phone-error" class="form-error text-xs mt-1" aria-live="polite"></p>
                                     </div>
                                 </div>
@@ -197,10 +249,20 @@
                     </div>
 
                     <!-- Contracts section (collapsible) -->
-                    <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
-                        <button type="button" id="toggle-contracts" class="w-full flex items-center justify-between text-left group" aria-expanded="true">
-                            <h2 class="font-display text-xl uppercase tracking-wider text-steel group-hover:text-ice transition">Contratos <span id="contracts-count" class="text-sky/50 font-normal lowercase font-sans text-xs"></span></h2>
-                            <svg id="chevron-contracts" class="h-4 w-4 text-steel transition-transform duration-300 group-hover:text-sky" style="transform: rotate(180deg)" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    <div
+                        class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
+                        <button type="button" id="toggle-contracts"
+                            class="w-full flex items-center justify-between text-left group" aria-expanded="true">
+                            <h2
+                                class="font-display text-xl uppercase tracking-wider text-steel group-hover:text-ice transition">
+                                Contratos <span id="contracts-count"
+                                    class="text-sky/50 font-normal lowercase font-sans text-xs"></span></h2>
+                            <svg id="chevron-contracts"
+                                class="h-4 w-4 text-steel transition-transform duration-300 group-hover:text-sky"
+                                style="transform: rotate(180deg)" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
                         </button>
                         <div id="contracts-collapsible" class="collapsible-wrapper">
                             <div class="collapsible-inner">
@@ -212,7 +274,10 @@
                                     <!-- Add contract button -->
                                     <button type="button" id="btn-add-contract"
                                         class="btn-ghost w-full flex items-center justify-center gap-2 rounded-xl border border-dashed border-royal/40 bg-[#0C2644]/30 py-3.5 text-sm font-medium text-steel hover:border-sky/50 hover:text-sky hover:bg-[#0C2644]/50 transition mt-4">
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                                        </svg>
                                         Adicionar contrato
                                     </button>
                                 </div>
@@ -230,21 +295,26 @@
                         <div class="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
                             <div class="rounded-xl bg-night/50 border border-royal/20 p-3.5">
                                 <p class="text-[11px] text-steel uppercase tracking-wider mb-0.5">Economia mensal</p>
-                                <p id="total-economia-mensal" class="font-display text-xl text-sky tracking-wide">R$ 0,00</p>
+                                <p id="total-economia-mensal" class="font-display text-xl text-sky tracking-wide">R$
+                                    0,00</p>
                             </div>
                             <div class="rounded-xl bg-night/50 border border-royal/20 p-3.5">
                                 <p class="text-[11px] text-steel uppercase tracking-wider mb-0.5">Economia até o fim</p>
-                                <p id="total-economia-projetada" class="font-display text-xl text-sky tracking-wide">R$ 0,00</p>
+                                <p id="total-economia-projetada" class="font-display text-xl text-sky tracking-wide">R$
+                                    0,00</p>
                             </div>
                             <div class="rounded-xl bg-night/50 border border-royal/20 p-3.5">
-                                <p class="text-[11px] text-steel uppercase tracking-wider mb-0.5">Total ressarcimentos</p>
-                                <p id="total-ressarcimentos" class="font-display text-xl text-sky tracking-wide">R$ 0,00</p>
+                                <p class="text-[11px] text-steel uppercase tracking-wider mb-0.5">Total ressarcimentos
+                                </p>
+                                <p id="total-ressarcimentos" class="font-display text-xl text-sky tracking-wide">R$ 0,00
+                                </p>
                             </div>
                         </div>
 
                         <!-- Andamento das parcelas por contrato -->
                         <div class="mt-4 pt-3.5 border-t border-royal/20">
-                            <p class="text-[11px] text-steel uppercase tracking-wider mb-2 font-medium">Andamento das parcelas</p>
+                            <p class="text-[11px] text-steel uppercase tracking-wider mb-2 font-medium">Andamento das
+                                parcelas</p>
                             <div id="indicators-parcelas-list" class="space-y-2">
                                 <p class="text-xs text-steel/60 italic">Nenhum contrato cadastrado.</p>
                             </div>
@@ -253,23 +323,35 @@
 
                     <!-- Proposal preview -->
                     <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl">
-                        <h2 class="font-display text-xl uppercase tracking-wider text-steel mb-3">Prévia da proposta</h2>
+                        <h2 class="font-display text-xl uppercase tracking-wider text-steel mb-3">Prévia da proposta
+                        </h2>
 
                         <!-- Seletor de alternativas da proposta -->
                         <div class="mb-3.5" role="region" aria-label="Seletor de alternativas da proposta">
-                            <label class="block text-[11px] font-medium uppercase tracking-wider text-steel mb-1.5">Alternativas na mensagem</label>
+                            <label
+                                class="block text-[11px] font-medium uppercase tracking-wider text-steel mb-1.5">Alternativas
+                                na mensagem</label>
                             <div class="grid grid-cols-3 gap-2" role="radiogroup" aria-label="Conteúdo da proposta">
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="message-mode" value="all" class="message-mode-radio sr-only" checked />
-                                    <span class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Todas as opções</span>
+                                    <input type="radio" name="message-mode" value="all"
+                                        class="message-mode-radio sr-only" checked />
+                                    <span
+                                        class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Todas
+                                        as opções</span>
                                 </label>
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="message-mode" value="reduction" class="message-mode-radio sr-only" />
-                                    <span class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Somente redução</span>
+                                    <input type="radio" name="message-mode" value="reduction"
+                                        class="message-mode-radio sr-only" />
+                                    <span
+                                        class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Somente
+                                        redução</span>
                                 </label>
                                 <label class="cursor-pointer">
-                                    <input type="radio" name="message-mode" value="restitution" class="message-mode-radio sr-only" />
-                                    <span class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Somente refin.</span>
+                                    <input type="radio" name="message-mode" value="restitution"
+                                        class="message-mode-radio sr-only" />
+                                    <span
+                                        class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Somente
+                                        refin.</span>
                                 </label>
                             </div>
                         </div>
@@ -277,7 +359,8 @@
                         <div id="proposal-preview"
                             class="rounded-xl bg-night/40 border border-royal/15 p-4 text-sm text-ice leading-relaxed whitespace-pre-wrap max-h-[400px] overflow-y-auto custom-scrollbar"
                             style="font-size: 0.8125rem; line-height: 1.65;">
-                            <p class="proposal-empty italic text-xs">Adicione contratos para visualizar a proposta...</p>
+                            <p class="proposal-empty italic text-xs">Adicione contratos para visualizar a proposta...
+                            </p>
                         </div>
 
                         <!-- Action buttons -->
@@ -285,19 +368,25 @@
                             <button type="button" id="btn-copy-proposal"
                                 class="btn-ghost flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-electric/60 bg-electric/20 px-5 py-2.5 text-sm font-medium text-white backdrop-blur hover:border-sky hover:bg-sky hover:text-night transition disabled:opacity-40 disabled:pointer-events-none"
                                 disabled>
-                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                </svg>
                                 <span>Copiar proposta</span>
                             </button>
                             <button type="button" id="btn-open-whatsapp"
                                 class="btn-ghost flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-electric/60 bg-electric/20 px-5 py-2.5 text-sm font-medium text-white backdrop-blur hover:border-sky hover:bg-sky hover:text-night transition disabled:opacity-40 disabled:pointer-events-none"
                                 disabled>
                                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0C5.4 0 .04 5.36.04 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62a11.94 11.94 0 0 0 5.88 1.5h.01c6.65 0 12.02-5.36 12.02-12 0-3.2-1.25-6.21-3.57-8.4zM12.07 21.8h-.01a9.85 9.85 0 0 1-5.02-1.37l-.36-.21-3.67.96.98-3.58-.23-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.46 4.45-9.9 9.92-9.9 2.65 0 5.14 1.03 7.01 2.9a9.83 9.83 0 0 1 2.9 7.01c0 5.46-4.46 9.83-9.91 9.83zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z" />
+                                    <path
+                                        d="M20.52 3.48A11.93 11.93 0 0 0 12.06 0C5.4 0 .04 5.36.04 12c0 2.11.55 4.17 1.6 5.99L0 24l6.18-1.62a11.94 11.94 0 0 0 5.88 1.5h.01c6.65 0 12.02-5.36 12.02-12 0-3.2-1.25-6.21-3.57-8.4zM12.07 21.8h-.01a9.85 9.85 0 0 1-5.02-1.37l-.36-.21-3.67.96.98-3.58-.23-.37a9.86 9.86 0 0 1-1.51-5.27c0-5.46 4.45-9.9 9.92-9.9 2.65 0 5.14 1.03 7.01 2.9a9.83 9.83 0 0 1 2.9 7.01c0 5.46-4.46 9.83-9.91 9.83zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.14 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35z" />
                                 </svg>
                                 <span>Abrir WhatsApp</span>
                             </button>
                         </div>
-                        <p id="whatsapp-hint" class="text-[11px] text-steel/60 mt-2 hidden">Informe um telefone válido para habilitar o envio pelo WhatsApp.</p>
+                        <p id="whatsapp-hint" class="text-[11px] text-steel/60 mt-2 hidden">Informe um telefone válido
+                            para habilitar o envio pelo WhatsApp.</p>
                         <p id="copy-feedback" class="form-success text-xs mt-2" role="status" aria-live="polite"></p>
                     </div>
                 </div>
@@ -309,12 +398,16 @@
     <footer class="border-t border-royal/25 bg-[#00346B] py-6 mt-8">
         <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row lg:px-10">
             <div class="flex items-center gap-3">
-                <img id="footer-logo" src="assets/images/logonav.png" alt="Lucas Gabriel Logo" class="h-6 w-auto opacity-70" />
+                <img id="footer-logo" src="assets/images/logonav.png" alt="Lucas Gabriel Logo"
+                    class="h-6 w-auto opacity-70" />
                 <p class="text-xs text-steel">
-                    &copy; 2026 <span class="font-medium text-white">Lucas Gabriel SC.</span> Todos os direitos reservados.
+                    &copy; 2026 <span class="font-medium text-white">Lucas Gabriel SC.</span> Todos os direitos
+                    reservados.
                 </p>
             </div>
-            <a href="servicos.html" class="link-underline text-xs font-semibold uppercase tracking-widest text-steel hover:text-sky transition-colors">&larr; Voltar a Serviços</a>
+            <a href="servicos.html"
+                class="link-underline text-xs font-semibold uppercase tracking-widest text-steel hover:text-sky transition-colors">&larr;
+                Voltar a Serviços</a>
         </div>
     </footer>
 
