@@ -1000,6 +1000,31 @@ textarea:focus-visible {
   color: var(--sky) !important;
 }
 
+/* Message mode radio selector */
+.message-mode-option {
+  background: rgba(0, 70, 143, 0.25);
+  border: 1px solid rgba(46, 116, 183, 0.40);
+  color: var(--steel);
+}
+
+.message-mode-option:hover {
+  border-color: var(--sky);
+  color: #FFFFFF;
+}
+
+.message-mode-radio:checked + .message-mode-option {
+  border-color: var(--sky) !important;
+  background: rgba(91, 169, 234, 0.18) !important;
+  color: var(--sky) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 0 0 1px rgba(91, 169, 234, 0.30);
+}
+
+.message-mode-radio:focus-visible + .message-mode-option {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
 /* Form field base styling for propostas */
 .form-field {
   color: #FFFFFF;
@@ -1193,6 +1218,28 @@ body.light-theme .contract-reducao:checked + .reducao-option {
   background: rgba(0, 88, 168, 0.10) !important;
   color: #0058A8 !important;
   font-weight: 700 !important;
+}
+
+/* Message mode radio selector in light theme */
+body.light-theme .message-mode-option {
+  background: #F8FAFC !important;
+  border: 1.5px solid #CBD5E1 !important;
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+body.light-theme .message-mode-option:hover {
+  border-color: #0058A8 !important;
+  color: #0058A8 !important;
+  background: #F0F7FF !important;
+}
+
+body.light-theme .message-mode-radio:checked + .message-mode-option {
+  border-color: #0058A8 !important;
+  background: rgba(0, 88, 168, 0.12) !important;
+  color: #0058A8 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 0 1px rgba(0, 88, 168, 0.25) !important;
 }
 
 /* Bank autocomplete dropdown */

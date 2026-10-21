@@ -138,6 +138,39 @@
                 <!-- ===== LEFT COLUMN: Simulation ===== -->
                 <div class="lg:col-span-7 space-y-5">
 
+                    <!-- Operator settings (collapsible) -->
+                    <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
+                        <button type="button" id="toggle-operator-settings" class="w-full flex items-center justify-between text-left group" aria-expanded="false">
+                            <h2 class="font-display text-xl uppercase tracking-wider text-steel group-hover:text-ice transition">
+                                Configurações do operador
+                                <span id="operator-status-badge" class="hidden ml-2 text-[10px] font-sans font-semibold uppercase tracking-widest text-sky/70 bg-sky/10 border border-sky/20 rounded-full px-2 py-0.5 align-middle">Confirmado</span>
+                            </h2>
+                            <svg id="chevron-operator" class="h-4 w-4 text-steel transition-transform duration-300 group-hover:text-sky" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                        </button>
+                        <div id="operator-collapsible" class="collapsible-wrapper is-collapsed">
+                            <div class="collapsible-inner">
+                                <div class="pt-4 space-y-3">
+                                    <div>
+                                        <label for="operator-name" class="block text-xs font-medium text-ice mb-1.5">Nome do operador</label>
+                                        <input type="text" id="operator-name" placeholder="Ex.: Lucas Gabriel"
+                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none" autocomplete="off" />
+                                        <p id="operator-name-error" class="form-error text-xs mt-1" aria-live="polite"></p>
+                                    </div>
+                                    <div id="operator-confirm-area">
+                                        <button type="button" id="btn-confirm-operator"
+                                            class="btn-ghost inline-flex items-center gap-2 rounded-full border border-electric/60 bg-electric/20 px-5 py-2 text-sm font-medium text-white backdrop-blur hover:border-sky hover:bg-sky hover:text-night transition">
+                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                                            Confirmar configurações
+                                        </button>
+                                    </div>
+                                    <p id="operator-confirmed-msg" class="hidden text-xs text-steel/70 italic">
+                                        ✓ Configurações confirmadas. Recarregue a página para alterar o operador.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Client data (collapsible) -->
                     <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl relative overflow-hidden">
                         <button type="button" id="toggle-client-data" class="w-full flex items-center justify-between text-left group" aria-expanded="false">
@@ -208,11 +241,39 @@
                                 <p id="total-ressarcimentos" class="font-display text-xl text-sky tracking-wide">R$ 0,00</p>
                             </div>
                         </div>
+
+                        <!-- Andamento das parcelas por contrato -->
+                        <div class="mt-4 pt-3.5 border-t border-royal/20">
+                            <p class="text-[11px] text-steel uppercase tracking-wider mb-2 font-medium">Andamento das parcelas</p>
+                            <div id="indicators-parcelas-list" class="space-y-2">
+                                <p class="text-xs text-steel/60 italic">Nenhum contrato cadastrado.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Proposal preview -->
                     <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl">
                         <h2 class="font-display text-xl uppercase tracking-wider text-steel mb-3">Prévia da proposta</h2>
+
+                        <!-- Seletor de alternativas da proposta -->
+                        <div class="mb-3.5" role="region" aria-label="Seletor de alternativas da proposta">
+                            <label class="block text-[11px] font-medium uppercase tracking-wider text-steel mb-1.5">Alternativas na mensagem</label>
+                            <div class="grid grid-cols-3 gap-2" role="radiogroup" aria-label="Conteúdo da proposta">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="message-mode" value="all" class="message-mode-radio sr-only" checked />
+                                    <span class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Todas as opções</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="message-mode" value="reduction" class="message-mode-radio sr-only" />
+                                    <span class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Somente redução</span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="message-mode" value="restitution" class="message-mode-radio sr-only" />
+                                    <span class="message-mode-option block text-center rounded-xl border py-2 px-1 text-xs font-semibold transition-all">Somente refin.</span>
+                                </label>
+                            </div>
+                        </div>
+
                         <div id="proposal-preview"
                             class="rounded-xl bg-night/40 border border-royal/15 p-4 text-sm text-ice leading-relaxed whitespace-pre-wrap max-h-[400px] overflow-y-auto custom-scrollbar"
                             style="font-size: 0.8125rem; line-height: 1.65;">
