@@ -1468,3 +1468,93 @@ body.light-theme button:focus-visible,
 body.light-theme input:focus-visible {
   outline-color: #0058A8 !important;
 }
+
+
+/* ========================================
+   RESPONSIVIDADE: EXCLUSIVA DO MENOR BREAKPOINT (max-width: 767px)
+   Formulário de contratos compacto com Grid 2x2
+   Não afeta resoluções maiores (tablet / desktop)
+   ======================================== */
+@media (max-width: 767px) {
+  /* Contrato Card mais compacto no menor breakpoint */
+  .prop-card[data-contract-id] {
+    padding: 0.875rem !important;
+  }
+
+  .prop-card[data-contract-id] .contract-header {
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Grid 2x2 equilibrado para os campos do contrato */
+  .contract-fields-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem 0.5rem !important;
+  }
+
+  /* Coluna 1, Linha 1: Banco */
+  .contract-field-banco {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  /* Coluna 2, Linha 1: Valor da parcela */
+  .contract-field-valor {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  /* Coluna 1, Linha 2: Taxa de juros atual */
+  .contract-field-juro-atual {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  /* Coluna 2, Linha 2: Nova taxa de juros */
+  .contract-field-novo-juros {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+  }
+
+  /* Campos abaixo do grid 2x2 ocupando largura total */
+  .contract-reducao-wrapper,
+  .contract-field-ressarcimento {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Redução da altura e padding dos inputs no menor breakpoint */
+  .contract-fields-grid .form-field {
+    height: 2.25rem !important;
+    min-height: 2.25rem !important;
+    padding-top: 0.375rem !important;
+    padding-bottom: 0.375rem !important;
+    padding-left: 0.625rem !important;
+    padding-right: 0.625rem !important;
+    font-size: 0.8125rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  /* Rótulos acima dos campos com espaçamento reduzido e boa legibilidade */
+  .contract-fields-grid label {
+    margin-bottom: 0.25rem !important;
+    font-size: 0.6875rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Resultados mini do contrato mais compactos */
+  .contract-results {
+    margin-top: 0.625rem !important;
+    padding-top: 0.625rem !important;
+  }
+
+  .contract-results .grid {
+    gap: 0.375rem !important;
+  }
+
+  .contract-results [class*="bg-night"] {
+    padding: 0.375rem 0.25rem !important;
+  }
+}

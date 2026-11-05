@@ -190,6 +190,26 @@
                                         <p id="operator-name-error" class="form-error text-xs mt-1" aria-live="polite">
                                         </p>
                                     </div>
+
+                                    <!-- Version selector (radio buttons) -->
+                                    <div class="pt-2 border-t border-royal/20" id="version-selector-area">
+                                        <label class="block text-xs font-medium text-ice mb-2">Versão da mensagem</label>
+                                        <div class="flex gap-3" role="radiogroup" aria-label="Versão da mensagem">
+                                            <label class="cursor-pointer flex-1">
+                                                <input type="radio" name="message-version" value="v1"
+                                                    class="message-version-radio sr-only" checked />
+                                                <span
+                                                    class="message-version-option message-mode-option block text-center rounded-xl border py-2 px-2 text-xs font-semibold transition-all">V1 — Modelo padrão</span>
+                                            </label>
+                                            <label class="cursor-pointer flex-1">
+                                                <input type="radio" name="message-version" value="v2"
+                                                    class="message-version-radio sr-only" />
+                                                <span
+                                                    class="message-version-option message-mode-option block text-center rounded-xl border py-2 px-2 text-xs font-semibold transition-all">V2 — Atualização de contrato</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
                                     <div id="operator-confirm-area">
                                         <button type="button" id="btn-confirm-operator"
                                             class="btn-ghost inline-flex items-center gap-2 rounded-full border border-electric/60 bg-electric/20 px-5 py-2 text-sm font-medium text-white backdrop-blur hover:border-sky hover:bg-sky hover:text-night transition">
@@ -235,6 +255,13 @@
                                             autocomplete="off" />
                                     </div>
                                     <div>
+                                        <label for="client-cpf"
+                                            class="block text-xs font-medium text-ice mb-1.5">CPF</label>
+                                        <input type="text" id="client-cpf" placeholder="000.000.000-00"
+                                            class="form-field w-full px-3.5 py-2.5 text-sm outline-none"
+                                            autocomplete="off" inputmode="numeric" maxlength="14" />
+                                    </div>
+                                    <div class="sm:col-span-2">
                                         <label for="client-phone"
                                             class="block text-xs font-medium text-ice mb-1.5">Telefone /
                                             WhatsApp</label>
@@ -289,8 +316,8 @@
                 <!-- ===== RIGHT COLUMN: Results + Preview ===== -->
                 <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-20 lg:self-start">
 
-                    <!-- Consolidated indicators -->
-                    <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl">
+                    <!-- ===== INDICATORS V1 ===== -->
+                    <div id="indicators-v1-panel" class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl">
                         <h2 class="font-display text-xl uppercase tracking-wider text-steel mb-4">Indicadores</h2>
                         <div class="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
                             <div class="rounded-xl bg-night/50 border border-royal/20 p-3.5">
@@ -321,13 +348,32 @@
                         </div>
                     </div>
 
+                    <!-- ===== INDICATORS V2 (hidden by default) ===== -->
+                    <div id="indicators-v2-panel" class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl hidden">
+                        <h2 class="font-display text-xl uppercase tracking-wider text-steel mb-4">Indicadores</h2>
+
+                        <!-- Andamento das parcelas -->
+                        <div class="mb-3">
+                            <p class="text-[11px] text-steel uppercase tracking-wider mb-2 font-medium">Andamento das parcelas</p>
+                            <div id="v2-parcelas-list" class="space-y-2">
+                                <p class="text-xs text-steel/60 italic">Nenhum contrato cadastrado.</p>
+                            </div>
+                        </div>
+
+                        <!-- Total de Ressarcimentos -->
+                        <div class="pt-3.5 border-t border-royal/20">
+                            <p class="text-[11px] text-steel uppercase tracking-wider mb-0.5">Total de ressarcimentos</p>
+                            <p id="v2-total-ressarcimentos" class="font-display text-xl text-sky tracking-wide">R$ 0,00</p>
+                        </div>
+                    </div>
+
                     <!-- Proposal preview -->
                     <div class="prop-card rounded-2xl border border-royal/30 bg-[#0C2644]/50 p-5 backdrop-blur-xl">
                         <h2 class="font-display text-xl uppercase tracking-wider text-steel mb-3">Prévia da proposta
                         </h2>
 
-                        <!-- Seletor de alternativas da proposta -->
-                        <div class="mb-3.5" role="region" aria-label="Seletor de alternativas da proposta">
+                        <!-- Seletor de alternativas da proposta (V1 only) -->
+                        <div id="message-mode-selector" class="mb-3.5" role="region" aria-label="Seletor de alternativas da proposta">
                             <label
                                 class="block text-[11px] font-medium uppercase tracking-wider text-steel mb-1.5">Alternativas
                                 na mensagem</label>
