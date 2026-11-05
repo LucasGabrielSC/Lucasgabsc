@@ -876,19 +876,12 @@
       text += 'Parcela: ' + valorParcela + '\n';
       text += ' Taxa: ' + juroAtual + ' a.m\n';
       text += '.\n';
-      text += ' Nova Condição\n';
+      text += '✅️ Nova Condição\n';
       text += 'Nova taxa: *' + novoJuros + '*% a.m\n';
       text += 'Valor que você recebe: *' + ressarcimento + '*\n\n';
     });
 
-    text += '💳 Situação Atual\n';
-    text += 'Parcela: R$  283,00\n';
-    text += ' Taxa: 1.84% a.m\n';
-    text += '.\n';
-    text += '✅️ Nova Condição\n';
-    text += 'Nova taxa: 1,19% a.m\n';
-    text += 'Valor que você recebe: R$ 3.920,00\n\n\n';
-    text += '📅 Previsão de Pagamento\n';
+    text += '\n📅 Previsão de Pagamento\n';
     text += 'O valor estará disponível em sua conta na próxima  SEMANA NA MESMA CONTA DO SEU BENEFICIO\n\n';
     text += 'RESPONDA:\n';
     text += '1- Para Prosseguir\n';
@@ -913,7 +906,7 @@
     }
 
     if (messageVersion === 'v2') {
-      return buildProposalTextV2(targetContracts, clientName, clientCpf);
+      return buildProposalTextV2(contracts, clientName, clientCpf);
     } else {
       return buildProposalTextV1(targetContracts, clientName, nomeOp);
     }
